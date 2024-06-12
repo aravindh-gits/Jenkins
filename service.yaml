@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: myservice
+    app: netapp
+spec:
+  selector:
+    app: netapp
+  type: LoadBalancer
+  ports:
+  - name:  myservice
+    port:  8002
+    targetport: 8080
+    protocol: TCP 

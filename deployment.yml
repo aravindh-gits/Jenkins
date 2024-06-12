@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netapp
+  labels:
+    app: netapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: netapp
+  template:
+    metadata:
+      name:  netapp
+      labels:
+        app: netapp
+    spec:
+      containers:
+        - image: aravindh077/dotnetapp
+          name: netapp
